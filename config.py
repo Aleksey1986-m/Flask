@@ -1,0 +1,15 @@
+import os
+
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "secret")
+POSTGRES_USER = os.getenv("POSTGRES_USER", "app")
+POSTGRES_DB = os.getenv("POSTGRES_DB", "app")
+POSTGRES_HOST = os.getenv("POSTGRES_HOST", "127.0.0.1")
+POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
+
+POSTGRES_DSN = os.getenv("PG_DSN", f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}")
+
+TOKEN_TTL = int(os.getenv("TOKEN_TTL", 86400))
+PASSWORD_LENGTH = int(os.getenv("PASSWORD_LENGTH", 12))
+
+
+
